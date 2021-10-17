@@ -7,5 +7,5 @@
 
 ## Implementation Details
 - The dataset is parsed using the Spotify Web API. This dataset has various features like artist name, track name, unique track id, popularity, danceability, loudness, speechiness, acousticness and more.
-- These features are used to train the unsupervised NearestNeighbors algorithm with cosine similarity as the metric.
+- These features are used to train the unsupervised NearestNeighbors algorithm with cosine distance as the metric.
 - During inference, model returns the distance and the index position on the dataframe for 6 similar songs to the given input song.
