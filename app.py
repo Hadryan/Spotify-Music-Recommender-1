@@ -11,7 +11,7 @@ def ui() -> None:
     st.markdown(
         "#### *A Spotify Music Recommender built using spotify API and NearestNeighbors algorithm.\
         The dataset is parsed using the spotify web API with my personal top artists and songs added to the dataset. \
-        The NearestNeighbors algorithm finds the cosine similarity between all the songs to recommend 6 similar songs.*"
+        The NearestNeighbors algorithm finds the cosine distance between all the songs to recommend 6 similar songs.*"
     )
     st.markdown("# Try it out:")
     song_name = st.text_input(label="Enter a song name", value="FEVER")
