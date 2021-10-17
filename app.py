@@ -14,6 +14,7 @@ def ui() -> None:
         The NearestNeighbors algorithm finds the cosine distance between all the songs to recommend 6 similar songs.*"
     )
     st.markdown("# Try it out:")
+    st.markdown("***Note: song name is case-sensitive")
     song_name = st.text_input(label="Enter a song name", value="FEVER")
     song_idx = features_df[features_df.eq(song_name).any(1)].index
     output = engine.predict(song_idx, features_df)
