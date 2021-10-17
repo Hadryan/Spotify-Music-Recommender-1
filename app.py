@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
-from engine import predict, visualize_songs
+from engine import SpotifyRecommender
 
 features_df = pd.read_csv("./data/spotify_audio_features.csv")
 
 
 def ui() -> None:
+    engine = SpotifyRecommender(st.secrets['client_id'], st.secrets['client_secret'])
     st.markdown("# Spotify Music Recommender")
     st.markdown(
         "#### *A Spotify Music Recommender built using spotify API and NearestNeighbors algorithm.\
@@ -15,10 +16,10 @@ def ui() -> None:
     st.markdown("# Try it out:")
     song_name = st.text_input(label="Enter a song name", value="FEVER")
     song_idx = features_df[features_df.eq(song_name).any(1)].index
-    output = predict(song_idx, features_df)
+    output = engine.predict(song_idx, features_df)
 
     if isinstance(output, pd.DataFrame):
-        fig = visualize_songs(output)
+        fig = engine.visualize_songs(output)
         st.write(fig)
 
     elif isinstance(output, str):
