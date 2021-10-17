@@ -1,0 +1,9 @@
+spotipy
+pandas
+numpy
+matplotlib
+scikit-learn
+streamlit
+scikit-image
+tqdm
+pickle
