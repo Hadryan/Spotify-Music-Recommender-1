@@ -6,4 +6,4 @@ scikit-learn
 streamlit
 scikit-image
 tqdm
-pickle
+pickle-mixin
